@@ -30,15 +30,21 @@ class Djikstra:
 
     
 
-    def forwardPass(self, orgCode):
+    def forwardPass(self, orgCode, hasVisa):
         currentId, currentNode = findVertex(self.nodes ,orgCode)
         currentNode.acc = 0
 
         nodeQueue = []
 
+        if not hasVisa:
+            for node in self.nodes:
+                node.visited = node.visaReq
 
         while checkEnd(self.nodes):
             currentId, currentNode = findLowest(self.nodes)
+
+            if currentNode.acc >= 99999:
+                break
 
             nodeQueue = findAdj(self.adjMat[currentId], self.nodes)
 

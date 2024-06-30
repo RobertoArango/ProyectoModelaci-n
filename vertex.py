@@ -3,6 +3,6 @@ class Vertex:
         self.code = code
         self.name = name
         self.visaReq = visaReq
-        self.acc = 99999
+        self.acc = 999999
         self.predecesor = None
         self.visited = False

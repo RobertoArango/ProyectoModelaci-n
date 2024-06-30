@@ -50,7 +50,7 @@ def findNotVisited(nodeList):
 def findAdj(adjRow, nodeList):
     adjList = []
     for i in range(len(adjRow)):
-        if adjRow[i] < 9999:
+        if adjRow[i] < 99999:
             if not nodeList[i].visited:
                 adjList.append(i)
     
