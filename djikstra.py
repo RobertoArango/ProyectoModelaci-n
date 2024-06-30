@@ -6,30 +6,27 @@ class Djikstra:
 
         self.nodes = []
         self.adjMat = []
-        self.visaMat = []
-        self.nodeQueue = []
 
     
-    def createVertex(self, code ,name):
-        tempVert = Vertex(code, name, 99999, None)
+    def createVertex(self, code ,name, visaReq):
+        tempVert = Vertex(code, name, visaReq)
         self.nodes.append(tempVert)
 
     def createMatrix(self):
         for i in range(len(self.nodes)):
             self.adjMat.append([])
-            self.visaMat.append([])
             for j in range(len(self.nodes)):
-                self.adjMat[i].append(999)
-                self.visaMat[i].append(0)
+                self.adjMat[i].append(99999)
 
     def fillMatrix(self):
         print('Hola')
         
-    def fillCell(self, orgCode, destCode, cost, visaReq):
+    def fillCell(self, orgCode, destCode, cost):
         orgId, orgNode = findVertex(self.nodes ,orgCode)
         destId, destNode = findVertex(self.nodes, destCode)
+
         self.adjMat[orgId][destId] = cost
-        self.visaMat[orgId][destId] = visaReq
+        self.adjMat[destId][orgId] = cost
 
     
 
@@ -37,19 +34,22 @@ class Djikstra:
         currentId, currentNode = findVertex(self.nodes ,orgCode)
         currentNode.acc = 0
 
+        nodeQueue = []
+
+
         while checkEnd(self.nodes):
-
-            print(currentId)
-
-            self.nodes[currentId].visited = True
-            self.nodeQueue = findAdj(self.adjMat[currentId])
-
-            for i in self.nodeQueue:
-                if self.adjMat[currentId][i] + currentNode.acc < self.nodes[i].acc + currentNode.acc:
-                    self.nodes[i].acc = currentNode.acc + self.adjMat[currentId][i]
-
             currentId, currentNode = findLowest(self.nodes)
 
+            nodeQueue = findAdj(self.adjMat[currentId], self.nodes)
+
+            for tempId in nodeQueue:
+                if currentNode.acc + self.adjMat[currentId][tempId] < self.nodes[tempId].acc:
+                    self.nodes[tempId].acc = currentNode.acc + self.adjMat[currentId][tempId]
+                    self.nodes[tempId].predecesor = currentNode.code
+
+            currentNode.visited = True
+
+            
     def showCosts(self):
         for i in self.nodes:
-            print(i.acc)
+            print(f'{i.code} {i.acc} predecesor: {i.predecesor}')

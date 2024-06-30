@@ -1,7 +1,8 @@
 class Vertex:
-    def __init__(self, code, name, acc, predecesor):
+    def __init__(self, code, name, visaReq):
         self.code = code
         self.name = name
-        self.acc = acc
-        self.predecesor = predecesor
+        self.visaReq = visaReq
+        self.acc = 99999
+        self.predecesor = None
         self.visited = False

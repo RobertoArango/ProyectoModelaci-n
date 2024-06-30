@@ -7,12 +7,12 @@ def findVertex(nodes, code):
                 return tempNumb, tempVer
             
         print(f'No se encontro nodo {code}')
-        return None
+        return None, None
 
-def showMatrix(adjMat, visaMat):
-     print(f'''{adjMat}
-           \n
-           {visaMat}''')
+def showMatrix(adjMat):
+     for i in adjMat:
+          print(f'{i}\n')
+
      
 def checkEnd(nodeList):
      
@@ -20,7 +20,6 @@ def checkEnd(nodeList):
 
     for node in nodeList:
           if not node.visited:
-               print(node.visited)
                endBool = True
                return endBool
           
@@ -38,15 +37,21 @@ def findLowest(nodeList):
     return tempId, tempNode
 
 def findNotVisited(nodeList):
-     
-     for tempId, tempNode in enumerate(nodeList):
+
+    tempId = None
+    tempNode = None 
+
+    for tempId, tempNode in enumerate(nodeList):
           if not tempNode.visited:
                return tempId, tempNode
+          
+    return tempId, tempNode
 
-def findAdj(adjRow):
+def findAdj(adjRow, nodeList):
     adjList = []
     for i in range(len(adjRow)):
-        if adjRow[i] < 999:
-            adjList.append(i)
+        if adjRow[i] < 9999:
+            if not nodeList[i].visited:
+                adjList.append(i)
     
     return adjList
