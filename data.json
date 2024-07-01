@@ -1,0 +1,166 @@
+{
+    "vertex":[
+        {
+            "code": "CCS",
+            "name": "Caracas",
+            "visaReq": false
+        },
+        {
+            "code": "AUA",
+            "name": "Aruba",
+            "visaReq": true
+        },
+        {
+            "code": "BON",
+            "name": "Bonaire",
+            "visaReq": true
+        },
+        {
+            "code": "CUR",
+            "name": "Curazao",
+            "visaReq": true
+        },
+        {
+            "code": "SXM",
+            "name": "San Martin",
+            "visaReq": true
+        },
+        {
+            "code": "SDQ",
+            "name": "Santo Domingo",
+            "visaReq": true
+        },
+        {
+            "code": "SBH",
+            "name": "San Bartolome",
+            "visaReq": false
+        },
+        {
+            "code": "POS",
+            "name": "Puerto España",
+            "visaReq": false
+        },
+        {
+            "code": "BGI",
+            "name": "Barbados",
+            "visaReq": false
+        },
+        {
+            "code": "FDF",
+            "name": "Fort de France",
+            "visaReq": false
+        },
+        {
+            "code": "PTP",
+            "name": "Point a Pitre",
+            "visaReq": false
+        }
+    ],
+    "Arcs":[
+        {
+            "orig": "CCS",
+            "dest": "AUA",
+            "cost": 40.00
+        },
+        {
+            "orig": "CCS",
+            "dest": "CUR",
+            "cost": 35.00
+        },
+        {
+            "orig": "CCS",
+            "dest": "BON",
+            "cost": 60.00
+        },
+        {
+            "orig": "CCS",
+            "dest": "SXM",
+            "cost": 300.00
+        },
+        {
+            "orig": "AUA",
+            "dest": "CUR",
+            "cost": 15.00
+        },
+        {
+            "orig": "AUA",
+            "dest": "BON",
+            "cost": 15.00
+        },
+        {
+            "orig": "CUR",
+            "dest": "BON",
+            "cost": 15.00
+        },
+        {
+            "orig": "CCS",
+            "dest": "SDQ",
+            "cost": 180.00
+        },
+        {
+            "orig": "SDQ",
+            "dest": "SXM",
+            "cost": 50.00
+        },
+        {
+            "orig": "SXM",
+            "dest": "SBH",
+            "cost": 45.00
+        },
+        {
+            "orig": "CCS",
+            "dest": "POS",
+            "cost": 150.00
+        },
+        {
+            "orig": "CCS",
+            "dest": "BGI",
+            "cost": 180.00
+        },
+        {
+            "orig": "POS",
+            "dest": "BGI",
+            "cost": 35.00
+        },
+        {
+            "orig": "POS",
+            "dest": "SXM",
+            "cost": 90.00
+        },
+        {
+            "orig": "BGI",
+            "dest": "SXM",
+            "cost": 70.00
+        },
+        {
+            "orig": "POS",
+            "dest": "PTP",
+            "cost": 80.00
+        },
+        {
+            "orig": "POS",
+            "dest": "FDF",
+            "cost": 75.00
+        },
+        {
+            "orig": "PTP",
+            "dest": "SXM",
+            "cost": 100.00
+        },
+        {
+            "orig": "PTP",
+            "dest": "SBH",
+            "cost": 80.00
+        },
+        {
+            "orig": "CUR",
+            "dest": "SXM",
+            "cost": 80.00
+        },
+        {
+            "orig": "AUA",
+            "dest": "SXM",
+            "cost": 40.00
+        }
+    ]
+}
