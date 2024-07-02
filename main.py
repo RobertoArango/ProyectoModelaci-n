@@ -53,12 +53,13 @@ def main():
     #hola.fillCell('PTP', 'SXM', 100.00) # 10 - 4
     #hola.fillCell('PTP', 'SBH', 80.00) # 10 - 6
     #hola.fillCell('CUR', 'SXM', 80.00) # 3 - 4
-    #hola.fillCell('AUA', 'SXM', 40.00) # 1 - 4
+    #hola.fillCell('AUA', 'SXM', 85.00) # 1 - 4
 
     showMatrix(hola.adjMat)
 
-    hola.forwardPass('CCS', False)
-    hola.showCosts('FDF')
+    #hola.forwardPass('CCS', False)
+    hola.menosEscalas('CCS', 'AUA', False)
+    hola.showCosts('AUA')
     
 
 main()
