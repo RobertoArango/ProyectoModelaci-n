@@ -123,7 +123,7 @@ class Djikstra:
                 else:
                     route = [dest]
                     tempPredecesor = i.predecesor
-                    print(f'{i.code} {i.acc} predecesor: {i.predecesor}\n\n')
+                    print(f'\nDestino: {i.code} Costo del viaje: {i.acc} Predecesor: {i.predecesor}\n\n')
                     
                     while tempPredecesor != None:
                         route.append(tempPredecesor)
