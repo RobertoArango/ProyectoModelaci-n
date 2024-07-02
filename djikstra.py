@@ -58,17 +58,20 @@ class Djikstra:
     def showCosts(self, dest):
         for i in self.nodes:
             if i.code == dest:
-                route = [dest]
-                tempPredecesor = i.predecesor
-                print(f'{i.code} {i.acc} predecesor: {i.predecesor}\n\n')
-                
-                while tempPredecesor != None:
-                    route.append(tempPredecesor)
-                    currentId, currentNode = findVertex(self.nodes ,tempPredecesor)
-                    tempPredecesor = currentNode.predecesor
-                
-                indice = 1
-                print("Ruta:")
-                for i in reversed(route):
-                    print(f'{indice}. {i}')
-                    indice += 1
+                if i.predecesor == None:
+                    print("Mano, no tienes ni fe, ni visa. No puedes viajar")
+                else:
+                    route = [dest]
+                    tempPredecesor = i.predecesor
+                    print(f'{i.code} {i.acc} predecesor: {i.predecesor}\n\n')
+                    
+                    while tempPredecesor != None:
+                        route.append(tempPredecesor)
+                        currentId, currentNode = findVertex(self.nodes ,tempPredecesor)
+                        tempPredecesor = currentNode.predecesor
+                    
+                    indice = 1
+                    print("Ruta:")
+                    for i in reversed(route):
+                        print(f'{indice}. {i}')
+                        indice += 1

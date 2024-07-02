@@ -57,7 +57,7 @@ def main():
 
     showMatrix(hola.adjMat)
 
-    hola.forwardPass('CUR', True)
+    hola.forwardPass('CCS', False)
     hola.showCosts('FDF')
     
 
